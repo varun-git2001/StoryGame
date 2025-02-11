@@ -1,0 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:rgb(0, 0, 0);
+    
+}
+#background-container{
+    background-size: cover;
+    width: 1000px;
+    height: 900px;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.card-container {
+    width: 400px; /* Set a fixed width */
+    height: auto; /* Set a fixed height */
+    background-color: rgba(14, 58, 40, 0.9); /* Slight transparency */
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content */
+}
+
+.content-wrapper {
+    padding: 20px;
+    position: relative; /* Ensure content sits above the image */
+    z-index: 1; /* Keep content above the image */
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #ffcc00;
+}
+
+#story-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choice-button {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.choice-button:hover {
+    background-color: #e6b800;
+}
+
+#restart {
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#restart:hover {
+    background-color: darkred;
+}
