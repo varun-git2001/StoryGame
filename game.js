@@ -270,10 +270,12 @@ const story = {
     "cartel_kingpin": {
         text: "You've solidified your position as the new cartel kingpin. Now, you must deal with the DEA and rival cartels. What will you do?",
         choices: [
-            { text: "Make a deal with the DEA to keep your operation safe.",next: "cartel_kingpin"},
-            { text: "Eliminate rival cartels and expand your territory.",next: "cartel_kingpin"}
+            { text: "Make a deal with the DEA to keep your operation safe.",next: "dea_closing"},
+            { text: "Eliminate rival cartels and expand your territory.",next: "cartel_takeover"}
         ],background:"Assets/king.webp"
     },
+    
+
     "empire_expansion": {
         text: "Your empire grows as you expand to new cities, but the pressure from law enforcement intensifies. What's your next move?",
         choices: [
@@ -309,21 +311,18 @@ function showStory(key) {
     const scene = story[key];
     storyText.innerText = scene.text;
 
-    // Remove previous video if exists
     if (loseContainer) {
         backgroundContainer.removeChild(loseContainer);
         loseContainer = null;
     }
 
     if (key === "scarface_ending") {
-        // Clear background image
+       
         backgroundContainer.style.backgroundImage = "";
 
-        // Create container for video
         loseContainer = document.createElement("div");
         loseContainer.classList.add("lose-container");
 
-        // Create video element
         const video = document.createElement("video");
         video.src = "Assets/die.mp4"; 
         video.autoplay = true;
@@ -331,15 +330,14 @@ function showStory(key) {
         video.controls = false; 
         video.classList.add("lose-video");
 
-        // Append video to the container and then to the background
         loseContainer.appendChild(video);
         backgroundContainer.appendChild(loseContainer);
-    } else {
-        // Set normal background for other scenes
+    } 
+    else 
+    {
         backgroundContainer.style.backgroundImage = `url(${scene.background})`;
     }
 
-    // Clear previous choices
     choicesDiv.innerHTML = "";
 
     if (scene.choices.length === 0) {
@@ -347,7 +345,6 @@ function showStory(key) {
         return;
     }
 
-    // Generate new choices
     scene.choices.forEach(choice => {
         let btn = document.createElement("button");
         btn.innerText = choice.text;
