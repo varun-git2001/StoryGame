@@ -20,9 +20,23 @@
         </div>
         <button onclick="startGame()">Start Game</button>
     </div>
+
+    <audio id="bg-music" loop>
+        <source src="Assets/intro.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        function startGame() 
-        {
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("bg-music");
+            
+            document.body.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play().catch(error => console.log("Autoplay blocked:", error));
+                }
+            });
+        });
+
+        function startGame() {
             window.location.href = "game.html";
         }
     </script>
