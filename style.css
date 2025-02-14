@@ -1,10 +1,10 @@
 body {
     display: flex;
-    justify-content: center;  /* Horizontally center the content */
-    align-items: center;      /* Vertically center the content */
-    height: 100vh;            /* Make body take full height of the viewport */
-    margin: 0;                /* Remove default margin */
-    background-image: url('Assets/brba.png'); /* Set background image */
+    justify-content: center;  
+    align-items: center;     
+    height: 100vh;           
+    margin: 0;                
+    background-image: url('Assets/brba.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

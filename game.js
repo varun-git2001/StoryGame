@@ -147,7 +147,7 @@ const story = {
         text: "You continue to grow your underground network, remaining largely hidden from the public eye. The DEA is aware of your existence, but they can't touch you as long as you stay out of the spotlight. Eventually, you become the true kingpin, but your paranoia keeps you isolated.",
         choices: [
             { text: "Maintain your hidden empire indefinitely.", next: "redemption_regret"},
-            { text: "Return to the surface for one final confrontation with the cartel."}
+            { text: "Return to the surface for one final confrontation with the cartel.",next: "scarface_ending"}
         ],
         background:"Assets/hide.webp"
     },
